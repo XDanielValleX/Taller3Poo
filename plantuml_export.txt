@@ -1,0 +1,23 @@
+@startuml
+class Persona {
+    - nombre: String
+    + Persona(nombre: String)
+    + getNombre(): String
+}
+
+class Evento {
+    - descripcion: String
+    + Evento(descripcion: String)
+    + getDescripcion(): String
+}
+
+class Matrimonio {
+    - persona: Persona
+    - evento: Evento
+    + Matrimonio(persona: Persona, evento: Evento)
+    + mostrarMatrimonio()
+}
+
+Persona "1" -- "0..*" Matrimonio : participa >
+Evento "1" -- "0..*" Matrimonio : ocurre en >
+@enduml
