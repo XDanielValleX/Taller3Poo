@@ -1,0 +1,20 @@
+@startuml
+class Jugador {
+    - nombre: String
+    + Jugador(nombre: String)
+    + getNombre(): String
+}
+
+class Equipo {
+    - jugadores: List<Jugador>
+    + Equipo()
+    + agregarJugador(jugador: Jugador)
+    + buscarJugador(nombre: String): Jugador
+    + eliminarJugador(jugador: Jugador): boolean
+    + eliminarTodosLosJugadores()
+    + mostrarJugadores()
+}
+
+Equipo "1" -- "*" Jugador : tiene >
+
+@enduml
